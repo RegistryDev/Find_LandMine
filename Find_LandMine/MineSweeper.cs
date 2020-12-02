@@ -18,7 +18,6 @@ namespace Find_LandMine
         int box;
         double time = 0.0;
         int num;
-
         int flagCnt;
         int flag = 0;
         bool nearMineFlag = false;
@@ -130,14 +129,6 @@ namespace Find_LandMine
         private void MineSweeper_Load(object sender, EventArgs e)
         {
 
-        }
-        public String getName()
-        {
-            return name;
-        }
-        public int getBox()
-        {
-            return box;
         }
         public double getTime()
         {

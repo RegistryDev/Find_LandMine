@@ -13,20 +13,14 @@ namespace Find_LandMine
     public partial class Form1 : Form
     {
         MineSweeper mineSweeper;
-        List<Rank> list;
         string name;
         int box = 0;
-
         public Form1()
         {
             InitializeComponent();
-            list = new List<Rank>();
-            list.Add(new Rank("", 5, 15.0));
-            list.Add(new Rank("", 4, 10.0));
-            list.Add(new Rank("", 3, 5.0));
-            dataGridView1.DataSource = list;
+            Rank.initList();
+            dataGridView1.DataSource = Rank.list;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             name = textBox1.Text;
@@ -38,20 +32,13 @@ namespace Find_LandMine
                 if (mineSweeper.getFlag() == -1)
                 {
                     double time = mineSweeper.getTime();
-                    list.Add(new Rank(name, box, time));
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.addList(name, box, time);
+                    dataGridView1.DataSource = Rank.listOut;
                 }
                 else
                 {
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.sortList();
+                    dataGridView1.DataSource = Rank.listOut;
                 }
             }
             else if (radioButton2.Checked == true) 
@@ -62,20 +49,13 @@ namespace Find_LandMine
                 if (mineSweeper.getFlag() == -1)
                 {
                     double time = mineSweeper.getTime();
-                    list.Add(new Rank(name, box, time));
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.addList(name, box, time);
+                    dataGridView1.DataSource = Rank.listOut;
                 }
                 else
                 {
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.sortList();
+                    dataGridView1.DataSource = Rank.listOut;
                 }
             }
             else if (radioButton3.Checked == true) { 
@@ -85,32 +65,25 @@ namespace Find_LandMine
                 if (mineSweeper.getFlag() == -1)
                 {
                     double time = mineSweeper.getTime();
-                    list.Add(new Rank(name, box, time));
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.addList(name, box, time);
+                    dataGridView1.DataSource = Rank.listOut;
                 }
                 else
                 {
-                    var data = from num in list
-                               orderby num.Box descending, num.Time ascending
-                               select num;
-                    List<Rank> listOut = data.ToList();
-                    dataGridView1.DataSource = listOut;
+                    Rank.sortList();
+                    dataGridView1.DataSource = Rank.listOut;
                 }
             }
             else { MessageBox.Show("Box의 개수를 선택하세요", "Error"); }
         }
-  
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            list = new List<Rank>();
-            list.Add(new Rank("", 5, 15.0));
-            list.Add(new Rank("", 4, 10.0));
-            list.Add(new Rank("", 3, 5.0));
-            dataGridView1.DataSource = list;
+            Rank.initList();
+            dataGridView1.DataSource = Rank.list;
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
