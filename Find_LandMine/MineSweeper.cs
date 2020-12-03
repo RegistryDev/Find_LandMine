@@ -20,7 +20,7 @@ namespace Find_LandMine
         int num;
         int flagCnt;
         int flag = 0;
-        bool nearMineFlag = false;
+
         public MineSweeper(string name, int box)
         {
             InitializeComponent();
@@ -44,57 +44,31 @@ namespace Find_LandMine
                 button[i].Location = new Point(initLocation.X + x, initLocation.Y);
                 button[i].Size = new Size(initSize.Width, initSize.Height);
                 button[i].Click += new EventHandler(btnClick);
-
+                button[i].Tag = " ";
                 Controls.Add(button[i]);
                 x += 106;
             }
             
+            button[num].Click -= new EventHandler(btnClick);
             button[num].Click += new EventHandler(btnMineClick);
             if (num != 0 && num != box-1)
             {
-                button[num + 1].Click += new EventHandler(btnNearMineClick);
-                button[num - 1].Click += new EventHandler(btnNearMineClick);
-                nearMineFlag = true;
+                button[num + 1].Tag = "1";
+                button[num - 1].Tag = "1";
             }
-            else if (num == 0)
-            {
-                button[num + 1].Click += new EventHandler(btnNearMineClick);
-                nearMineFlag = true;
-            }
-            else if (num == box - 1)
-            {
-                button[num - 1].Click += new EventHandler(btnNearMineClick);
-                nearMineFlag = true;
-            }
+            else if (num == 0) { button[num + 1].Tag = "1"; }
+            else if (num == box - 1) { button[num - 1].Tag = "1"; }
         }
         void btnClick(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             btn.Enabled = false;
             btn.BackColor = Color.Gray;
+            btn.Font = new Font("맑은 고딕", 15.0F);
+            btn.Text = btn.Tag.ToString();
             flagCnt--;
             if (flagCnt == 1)
             {
-                if (nearMineFlag == true)
-                {
-                    if (num != 0 && num != box - 1)
-                    {
-                        button[num + 1].Font = new Font("맑은 고딕", 15.0F);
-                        button[num - 1].Font = new Font("맑은 고딕", 15.0F);
-                        button[num + 1].Text = "1";
-                        button[num - 1].Text = "1";
-                    }
-                    else if (num == 0)
-                    {
-                        button[num+1].Font = new Font("맑은 고딕", 15.0F);
-                        button[num + 1].Text = "1";
-                    }
-                    else if (num == box - 1)
-                    {
-                        button[num - 1].Font = new Font("맑은 고딕", 15.0F);
-                        button[num - 1].Text = "1";
-                    }
-                }
                 flag = -1;
                 timer1.Enabled = false;
                 MessageBox.Show("성공하셨습니다", "성공");
@@ -110,12 +84,6 @@ namespace Find_LandMine
             MessageBox.Show("실패하셨습니다", "실패");
             this.Visible = false;
         }
-        void btnNearMineClick(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            btn.Font = new Font("맑은 고딕", 15.0F);
-            btn.Text = "1";
-        }
         void btnHintClick(object sender, EventArgs e)
         {
             button[num].Font = new Font("맑은 고딕", 15.0F);
@@ -125,11 +93,7 @@ namespace Find_LandMine
         {
             time = time + 0.1;
             textBox1.Text = time.ToString("0.0");
-        }
-        private void MineSweeper_Load(object sender, EventArgs e)
-        {
-
-        }
+        } 
         public double getTime()
         {
             return Math.Truncate(time * 10) / 10;
@@ -137,6 +101,10 @@ namespace Find_LandMine
         public int getFlag()
         {
             return flag;
+        }
+        private void MineSweeper_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

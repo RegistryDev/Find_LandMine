@@ -8,16 +8,17 @@ namespace Find_LandMine
 {
     class Rank
     {
-        internal static List<Record> list;
-        internal static List<Record> listOut;
-        public static void initList()
+        internal List<Record> list = new List<Record>();
+        internal List<Record> listOut;
+
+        public Rank()
         {
-            list = new List<Record>();
             list.Add(new Record("", 5, 15.0));
             list.Add(new Record("", 4, 10.0));
             list.Add(new Record("", 3, 5.0));
         }
-        public static void addList(string name, int box, double time)
+
+        public void addList(string name, int box, double time)
         {
             list.Add(new Record(name, box, time));
             var data = from num in list
@@ -25,7 +26,7 @@ namespace Find_LandMine
                        select num;
             listOut = data.ToList();
         }
-        public static void sortList()
+        public void sortList()
         {
             var data = from num in list
                        orderby num.Box descending, num.Time ascending
