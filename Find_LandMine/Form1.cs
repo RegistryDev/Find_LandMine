@@ -79,7 +79,7 @@ namespace Find_LandMine
         }
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rank = new Rank();
+            rank.list = new List<Record>();
             dataGridView1.DataSource = rank.list;
         }
         private void Form1_Load(object sender, EventArgs e)

@@ -80,6 +80,8 @@ namespace Find_LandMine
             Button btn = sender as Button;
             btn.Font = new Font("맑은 고딕", 15.0F);
             btn.Text = "💣";
+            btn.BackColor = Color.Gray;
+            btn.Enabled = false;
             timer1.Enabled = false;
             MessageBox.Show("실패하셨습니다", "실패");
             this.Visible = false;

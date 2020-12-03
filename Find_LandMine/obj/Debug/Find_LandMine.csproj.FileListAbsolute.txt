@@ -9,3 +9,14 @@ D:\Projects\C#Project\Find_LandMine\Find_LandMine\obj\Debug\Find_LandMine.csproj
 D:\Projects\C#Project\Find_LandMine\Find_LandMine\obj\Debug\Find_LandMine.exe
 D:\Projects\C#Project\Find_LandMine\Find_LandMine\obj\Debug\Find_LandMine.pdb
 D:\Projects\C#Project\Find_LandMine\Find_LandMine\obj\Debug\Find_LandMine.MineSweeper.resources
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\bin\Debug\Find_LandMine.exe.config
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\bin\Debug\Find_LandMine.exe
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\bin\Debug\Find_LandMine.pdb
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.csprojAssemblyReference.cache
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.Form1.resources
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.MineSweeper.resources
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.Properties.Resources.resources
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.csproj.GenerateResource.cache
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.csproj.CoreCompileInputs.cache
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.exe
+D:\Projects\C#Project\Find_LandMine_Ver.2\Find_LandMine\obj\Debug\Find_LandMine.pdb
