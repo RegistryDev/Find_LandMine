@@ -105,9 +105,6 @@ namespace Find_LandMine
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             list = new List<Rank>();
-            list.Add(new Rank("", 5, 15.0));
-            list.Add(new Rank("", 4, 10.0));
-            list.Add(new Rank("", 3, 5.0));
             dataGridView1.DataSource = list;
         }
         private void Form1_Load(object sender, EventArgs e)
