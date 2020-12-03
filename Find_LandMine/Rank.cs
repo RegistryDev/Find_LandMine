@@ -17,7 +17,6 @@ namespace Find_LandMine
             list.Add(new Record("", 4, 10.0));
             list.Add(new Record("", 3, 5.0));
         }
-
         public void addList(string name, int box, double time)
         {
             list.Add(new Record(name, box, time));
