@@ -90,6 +90,7 @@ namespace Find_LandMine
         {
             button[num].Font = new Font("맑은 고딕", 15.0F);
             button[num].Text = "💣";
+            textBox2.Text = num.ToString();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
