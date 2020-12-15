@@ -21,7 +21,7 @@ namespace Find_LandMine
 
         int flagCnt;
         int flag = 0;
-        bool nearMineFlag = false;
+
         public MineSweeper(string name, int box)
         {
             InitializeComponent();
